@@ -1,9 +1,17 @@
-<ul>
-  <% @articles.each do |article| %>
-    <li><div><%= article.title %></div><div><%= link_to "read it", article_path(article) %></div></li>
-  <% end %>
-</ul>
+<div class="container-index">
+  <h1 class="pb-3 pt-3">Articles</h1>
 
-<div>
-  <%= link_to "Add an article", new_article_path %>
+  <div class="cards pl-3 pr-3 mb-3">
+      <% @articles.each_with_index do |article, index| %>
+        <%= link_to article_path(article) do %>
+          <div class="card-category">
+            <div class="title"><%= article.title %></div>
+          </div>
+        <% end %>
+      <% end %>
+  </div>
+
+  <div id="btn-add" class="btn-block pt-3 pb-3">
+    <%= link_to "Add an article", new_article_path %>
+  </div>
 </div>
