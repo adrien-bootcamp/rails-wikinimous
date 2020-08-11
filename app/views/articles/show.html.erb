@@ -1,4 +1,10 @@
 <h2><%= @article.title %></h2>
 <p><%= @article.content %></p>
 
+<div>
+<%= link_to "Update this article", edit_article_path %>
+</div>
+
+<div>
 <%= link_to "Back to the list", articles_path %>
+</div>
